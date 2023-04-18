@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 int user(){
+    // create a struct to store users information
     int n;
     struct  users 
     {
@@ -17,13 +18,11 @@ int user(){
         for (int i = 1; i < n; i++)
         {
             printf("\nName: ");
-            scanf("%s", &s[i].Username);
+            gets(s[i].Username);
             printf("\nID: ");
             scanf("%d", &s[i].ID);
-            printf("\nDateBirth: ");
-            scanf("%d", &s[i].DateBirth);
-            printf("\nDateBirth: ");
-            scanf("%d", &s[i].DateBirth);
+            printf("\nClass: ");
+            scanf("%d", &s[i].Class);
         }
     return 0;
 }
