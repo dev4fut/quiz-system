@@ -31,45 +31,20 @@ class User{
 
         void update_user(){
             // null entered is skipped change
-            string Username;
-            string DateBirth;
-            int Class;
+            string temp;
             printf("Username: ");
-            scanf("%s", &Username);
-            if(Username != ""){
-                this->Username = Username;
-            }
+            scanf("%s", &temp);
+            if (temp != "") Username = temp;
             printf("Date of birth: ");
-            input_date(DateBirth);
-            if(DateBirth != ""){
-                this->DateBirth = DateBirth;
-            }
+            input_date(temp);
+            if (temp != "") DateBirth = temp;
             printf("Class: ");
-            scanf("%d", &Class);
-            if(Class != ""){
-                this->Class = Class;
-            }
+            scanf("%s", &temp);
+            if (temp != "") Class = stoi(temp);
+        }
+
+        void delete_user(){
+            // delete object user
+            delete this;
         }
 };
-
-void updateUser(user &u){
-    // null entered is skipped change
-    char Username[50];
-    char DateBirth[10];
-    int Class;
-    printf("Username: ");
-    scanf("%s", &Username);
-    if(Username != ""){
-        u->Username = Username;
-    }
-    printf("Date of birth: ");
-    &DateBirth = input_date();
-    if(DateBirth != ""){
-        u.DateBirth = DateBirth;
-    }
-    printf("Class: ");
-    scanf("%d", &Class);
-    if(Class != ""){
-        u.Class = Class;
-    }
-}

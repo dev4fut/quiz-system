@@ -14,5 +14,4 @@ void input_date(string &date){
     printf("Year: ");
     scanf("%d", &t);
     date = date + "/" + to_string(t);
-    return date;
 }
