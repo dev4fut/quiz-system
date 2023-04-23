@@ -8,7 +8,7 @@ int n;
 struct w
 {
   char username[50], password[50];
-} w[100];
+} w;
 
 void reg(void);
 void login(void);
@@ -29,10 +29,13 @@ menu:
   }
 
 main_menu:
+  printf("\t\t\tType the number:\n");
   printf("1. Register\n");
   printf("2. Login\n");
   printf("3. Exit\n");
+  printf("Type your choose here: ");
   scanf("%d", &n);
+
   switch (n)
   {
   case 1:
@@ -94,12 +97,9 @@ void login(void)
 {
   FILE *fp;
   char c, username[50], password[50];
-  int z = 0, cun, cpw, f;
-  f = getc(fp);
   fp = fopen("tester.txt", "r");
 
   fclose(fp);
-
   getch();
 }
 
