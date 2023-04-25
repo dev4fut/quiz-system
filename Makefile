@@ -1,30 +1,3 @@
-# Project structure:
-# ├── app
-# │   ├── app.cpp
-# ├── functions
-# │   ├── helpio.cpp
-# │   ├── helpio.h
-# │   ├── info.cpp
-# │   ├── info.h
-# ├── models
-# │   ├── class.cpp
-# │   ├── class.h
-# │   ├── subject.cpp
-# │   ├── subject.h
-# │   ├── question.cpp
-# │   ├── question.h
-# │   ├── questionlist.cpp
-# │   ├── questionlist.h
-# │   ├── user.cpp
-# │   ├── user.h
-# │   ├── userlist.cpp
-# │   ├── userlist.h
-# ├── tests
-# └── .gitignore
-# └── diagram.drawio
-# └── Makefile
-# └── README.md
-
 # list file to compile
 APP_FILES = app\app.cpp
 FUNCTIONS_FILES = functions\helpio.cpp functions\info.cpp
