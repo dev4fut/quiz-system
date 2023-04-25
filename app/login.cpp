@@ -62,20 +62,25 @@ main_menu:
 
 void reg(void)
 {
-  FILE *fp;
+  FILE *fusername, *fpassword;
   char username[50], password[50];
   int n;
-  fp = fopen("tester.txt", "ab+");
+  
+  fusername = fopen("username.txt", "ab+");
+  fpassword = fopen("password.txt", "ab+");
 
   printf("\n\n\n\t\t\tEnter name: ");
   fscanf(stdin, "%s", username);
-  fputs(username, fp);
+  fputs(username, fusername);
+
+  //  fputc('\n', fp);
 
   printf("\n\n\n\t\t\tPassword: ");
   fscanf(stdin, "%s", password);
-  fputs(password, fp);
+  fputs(password, fpassword);
 
-  fclose(fp);
+  fclose(fusername);
+  fclose(fpassword);
 
   printf("\t\t\tREGISTERD\n");
   printf("\t\t\tYOU'RE REGISTERED\n");
@@ -95,11 +100,22 @@ void reg(void)
 
 void login(void)
 {
-  FILE *fp;
+  FILE *fusername, *fpassword;
+  int test;
   char c, username[50], password[50];
-  fp = fopen("tester.txt", "r");
+  fusername = fopen("username.txt", "r");
+  fpassword = fopen("password.txt", "r");
 
-  fclose(fp);
+  printf("\n\n\n\t\t\tUsername: ");
+  scanf("%s", &username);
+  fgets(username, 50, fusername);
+
+  printf("\n\n\n\t\t\tPassword: ");
+  scanf("%s", &password);
+  fgets(password, 50, fpassword);
+
+  fclose(fusername);
+  fclose(fpassword);
   getch();
 }
 
