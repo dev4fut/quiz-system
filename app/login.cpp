@@ -1,7 +1,8 @@
-#include "stdio.h"
-#include "stdlib.h"
-#include "string.h"
-#include "conio.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <conio.h>
+#include "..\models\user.h"
 
 static int i = 0;
 int n;
@@ -13,6 +14,11 @@ struct w
 
 void reg(void);
 void login(void);
+
+User getUserByUsername(char username[])
+{
+  
+}
 
 int login_menu(void)
 {
