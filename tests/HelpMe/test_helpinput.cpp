@@ -1,4 +1,4 @@
-#include"helpio.h"
+#include"..\..\functions\helpio.h"
 #include<iostream>
 #include<string.h>
 
@@ -6,7 +6,7 @@ using namespace std;
 
 int main(){
     string date;
-    input_date(date);
+    date = input_date();
     cout << date;
     return 0;
 }

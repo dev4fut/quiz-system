@@ -15,3 +15,9 @@ run_helpme: # run HelpMe\main.cpp
 	g++ HelpMe\main.cpp HelpMe\helpio.cpp -o HelpMe\main.exe
 	./HelpMe\main.exe
 	del HelpMe\main.exe
+
+run_testmain:
+	cls
+	g++ $(FUNCTIONS_FILES) tests\HelpMe\test_helpinput.cpp -o tests\HelpMe\test_helpinput.exe
+	./tests\HelpMe\test_helpinput.exe
+	del tests\HelpMe\test_helpinput.exe
