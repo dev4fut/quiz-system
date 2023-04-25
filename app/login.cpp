@@ -5,10 +5,11 @@
 
 static int i = 0;
 int n;
+
 struct w
 {
   char username[50], password[50];
-} w;
+}w[50];
 
 void reg(void);
 void login(void);
@@ -63,21 +64,20 @@ main_menu:
 void reg(void)
 {
   FILE *fusername, *fpassword;
-  char username[50], password[50];
   int n;
-  
+
   fusername = fopen("username.txt", "ab+");
   fpassword = fopen("password.txt", "ab+");
 
   printf("\n\n\n\t\t\tEnter name: ");
-  fscanf(stdin, "%s", username);
-  fputs(username, fusername);
+  fscanf(stdin, "%s", w[i].username);
+  fputs(w[i].username, fusername);
 
   //  fputc('\n', fp);
 
   printf("\n\n\n\t\t\tPassword: ");
-  fscanf(stdin, "%s", password);
-  fputs(password, fpassword);
+  fscanf(stdin, "%s", w[i].password);
+  fputs(w[i].password, fpassword);
 
   fclose(fusername);
   fclose(fpassword);
@@ -103,16 +103,25 @@ void login(void)
   FILE *fusername, *fpassword;
   int test;
   char c, username[50], password[50];
+
   fusername = fopen("username.txt", "r");
   fpassword = fopen("password.txt", "r");
 
   printf("\n\n\n\t\t\tUsername: ");
-  scanf("%s", &username);
-  fgets(username, 50, fusername);
+  scanf("%s", &w[i].username);
+  fgets(w[i].username, 50, fusername);
 
   printf("\n\n\n\t\t\tPassword: ");
-  scanf("%s", &password);
-  fgets(password, 50, fpassword);
+  scanf("%s", &w[i].password);
+  fgets(w[i].password, 50, fpassword);
+  if (w[i].username == 0 && w[i].password == 0)
+  {
+    printf("Login Successful");
+  }
+  else
+  {
+    printf("Your username or password is not correct");
+  }
 
   fclose(fusername);
   fclose(fpassword);
