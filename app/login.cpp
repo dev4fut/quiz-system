@@ -72,7 +72,7 @@ void reg(void)
   fscanf(stdin, "%s", w[i].username);
   fputs(w[i].username, fp);
 
-  fputc('\n', fp);
+  fputc('\t\t\t\t', fp);
 
   printf("\n\n\n\t\t\tPassword: ");
   fscanf(stdin, "%s", w[i].password);
@@ -124,7 +124,7 @@ void login(void)
       break;
     }
 
-    else if (checkuser == 0);
+    else if (checkuser == 0)
     {
       printf("\n\n\n\t\t\tWrong Password!");
       printf("\n\n\n\t\t\t Press [Y] to re-login");
@@ -138,9 +138,16 @@ void login(void)
       printf("\n\n\n\t\t\t You are not register");
       printf("\n\n\n\t\t\t Press [ENTER] to register");
       if(getch())
+      {
         system("cls");
         reg();
+      }
+      else if (checkuser != 0 && checkpass == 0)
+      {
+        goto h;
+      }
     }
+    break;
   }
   getch();
 }
