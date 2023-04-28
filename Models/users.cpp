@@ -49,7 +49,7 @@ class User{
             scanf("%s", &Password);
             if (temp != "") Password = temp;
             printf("Date of birth: ");
-            input_date(temp);
+            temp = input_date();
             if (temp != "") DateBirth = temp;
             printf("Class: ");
             scanf("%s", &temp);

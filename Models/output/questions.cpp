@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void questions(char* temp)
+void questions(char *temp)
 {
     struct question
     {
@@ -10,7 +10,7 @@ void questions(char* temp)
         char ans2[100];
         char ans3[100];
         char ans4[100];
-    }q;
+    } q;
     // input question to struct
     {
         printf(" ");
@@ -69,6 +69,5 @@ void questions(char* temp)
         strcpy(q.ans4, temp);
     }
 
-    //Delete variables in struct
-
+    // Delete variables in struct
 };
