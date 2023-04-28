@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <HelpMe/helpinput.h>
 #include <string.h>
+#include <conio.h>
 
 class User{
     public:
@@ -8,25 +9,34 @@ class User{
         string Username;
         string DateBirth;
         int Class;
+        string Password;
+        string Gender;
             
-        User(int ID, string Username, string DateBirth, int Class){
+        User(int ID, string Username, string DateBirth, int Class, string Password, string Gender){
             this->ID = ID;
             this->Username = Username;
             this->DateBirth = DateBirth;
             this->Class = Class;
+            this->Password = Password;
+            this->Gender = Gender;
         }
 
         void input_user(){
             printf("Username: ");
             scanf("%s", &Username);
+            printf("Password: ");
+            scanf("%s", &Password);
             printf("Date of birth: ");
             input_date(DateBirth);
             printf("Class: ");
             scanf("%d", &Class);
+            printf("Gender: ");
+            scanf("%s", &Gender);
         }
 
-        void output_user(){
-            printf("ID: %d, Username: %s, Date of birth: %s, Class: %d", ID, Username, DateBirth, Class);
+        void output_user(int i = 0){
+            printf("User %d: ", i + 1);
+            printf("ID: %d\n, Username: %s\n, Gender: %s\n, Date of birth: %s\n, Class: %d\n, Password: %s\n", ID, Username, Gender, DateBirth, Class, Password);
         }
 
         void update_user(){
@@ -35,12 +45,18 @@ class User{
             printf("Username: ");
             scanf("%s", &temp);
             if (temp != "") Username = temp;
+            printf("Password: ");
+            scanf("%s", &Password);
+            if (temp != "") Password = temp;
             printf("Date of birth: ");
             input_date(temp);
             if (temp != "") DateBirth = temp;
             printf("Class: ");
             scanf("%s", &temp);
             if (temp != "") Class = stoi(temp);
+            printf("Gender: ");
+            scanf("%s", &Gender);
+            if (temp != "") Gender = temp;
         }
 
         void delete_user(){
