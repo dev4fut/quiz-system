@@ -4,14 +4,15 @@
 #include <string>
 using namespace std;
 
-class Class{
+class Grade{
     public:
         int ID;
         string Name;
         string Teacher;
         int Year;
-            
-        Class(int ID, string Name, string Teacher, int Year);
+
+        Grade();     
+        Grade(int ID, string Name, string Teacher, int Year);
         void input_class();
         void output_class();
         void update_class();

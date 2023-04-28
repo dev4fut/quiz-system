@@ -5,22 +5,30 @@
 
 using namespace std;
 
+User::User()
+{
+    this->ID = 0;
+    this->username = "";
+    this->dateBirth = "";
+    this->grade = new Grade();
+}
+
 User::User(int ID, string Username, string DateBirth, int Class){
     this->ID = ID;
-    this->Username = Username;
-    this->DateBirth = DateBirth;
-    this->Class = Class;
+    this->username = Username;
+    this->dateBirth = DateBirth;
+    this->grade = Class;
 }
 
 void User::input_user(){
     cout << "Enter ID: ";
     cin >> ID;
     cout << "Enter Username: ";
-    cin >> Username;
+    cin >> username;
     cout << "Enter Date of Birth: ";
-    cin >> DateBirth;
+    cin >> dateBirth;
     cout << "Enter Class: ";
-    cin >> Class;
+    cin >> grade;
 }
 
 void User::output_user(){
