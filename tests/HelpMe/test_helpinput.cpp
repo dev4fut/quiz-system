@@ -1,10 +1,12 @@
+#include"helpio.h"
 #include<iostream>
-#include"HelpMe\helpinput.h"
 #include<string.h>
+
+using namespace std;
 
 int main(){
     string date;
     input_date(date);
-    std::cout << date;
+    cout << date;
     return 0;
 }

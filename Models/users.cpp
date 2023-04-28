@@ -1,5 +1,5 @@
+#include "helpio.h"
 #include <stdio.h>
-#include <HelpMe/helpinput.h>
 #include <string.h>
 #include <conio.h>
 
@@ -27,7 +27,7 @@ class User{
             printf("Password: ");
             scanf("%s", &Password);
             printf("Date of birth: ");
-            input_date(DateBirth);
+            this->DateBirth = input_date();
             printf("Class: ");
             scanf("%d", &Class);
             printf("Gender: ");
