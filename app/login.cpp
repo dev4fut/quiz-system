@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <conio.h>
-#include "..\models\user.h"
 
 static int i = 0;
 int n;
@@ -14,11 +13,6 @@ struct w
 
 void reg(void);
 void login(void);
-
-User getUserByUsername(char username[])
-{
-  
-}
 
 int login_menu(void)
 {
@@ -105,7 +99,7 @@ void reg(void)
 void login(void)
 {
   FILE *fp;
-  int test;
+  int checkuser, checkpass;
   char c, username[50], password[50];
 
   fp = fopen("Info.txt", "r");
@@ -117,19 +111,39 @@ void login(void)
   printf("\n\n\n\t\t\tPassword: ");
   scanf("%s", &w[i].password);
   fgets(w[i].password, 50, fp);
-  if (w[i].username == 0 && w[i].password == 0)
+  while(!feof(fp))
   {
-    printf("Login Successful");
-  }
-  else
-  {
-    printf("Your username or password is not correct");
-  }
+    fread(&w[i], sizeof(w[i]), 1, fp);
+    checkuser = strcmp(username, w[i].username);
+    checkpass = strcmp(password, w[i].password);
 
-  fclose(fp);
+    if (checkuser == 0 && checkpass == 0)
+    {
+      system("cls");
+      printf("\n\n\n\t\t\t Login Success");
+      break;
+    }
+
+    else if (checkuser == 0);
+    {
+      printf("\n\n\n\t\t\tWrong Password!");
+      printf("\n\n\n\t\t\t Press [Y] to re-login");
+      if(getch() == 'y' && getch() == 'Y')
+        system("cls"); 
+        login();
+    }
+    else if (checkuser != 0 && checkpass != 0)
+    {
+    h:
+      printf("\n\n\n\t\t\t You are not register");
+      printf("\n\n\n\t\t\t Press [ENTER] to register");
+      if(getch())
+        system("cls");
+        reg();
+    }
+  }
   getch();
 }
-
 // Main
 int main(void)
 {
