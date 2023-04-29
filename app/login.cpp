@@ -9,7 +9,7 @@ int n;
 struct w
 {
   char username[50], password[50];
-}w[50];
+} w[50];
 
 void reg(void);
 void login(void);
@@ -72,7 +72,7 @@ void reg(void)
   fscanf(stdin, "%s", w[i].username);
   fputs(w[i].username, fp);
 
-  fputc('\t\t\t\t', fp);
+  fputc('\t\t\t\t\t\t', fp);
 
   printf("\n\n\n\t\t\tPassword: ");
   fscanf(stdin, "%s", w[i].password);
@@ -108,50 +108,64 @@ void login(void)
   scanf("%s", &w[i].username);
   fgets(w[i].username, 50, fp);
 
-  printf("\n\n\n\t\t\tPassword: ");
-  scanf("%s", &w[i].password);
-  fgets(w[i].password, 50, fp);
-  while(!feof(fp))
+  while (!feof(fp))
   {
     fread(&w[i], sizeof(w[i]), 1, fp);
     checkuser = strcmp(username, w[i].username);
-    checkpass = strcmp(password, w[i].password);
 
-    if (checkuser == 0 && checkpass == 0)
+    if (checkuser == 0)
     {
       system("cls");
-      printf("\n\n\n\t\t\t Login Success");
-      break;
+      printf("\n\n\n\t\t\t Username Available!");
     }
-
-    else if (checkuser == 0)
+    else
     {
-      printf("\n\n\n\t\t\tWrong Password!");
-      printf("\n\n\n\t\t\t Press [Y] to re-login");
-      if(getch() == 'y' && getch() == 'Y')
-        system("cls"); 
-        login();
-    }
-    else if (checkuser != 0 && checkpass != 0)
-    {
-    h:
-      printf("\n\n\n\t\t\t You are not register");
-      printf("\n\n\n\t\t\t Press [ENTER] to register");
-      if(getch())
+      printf("\n\n\n\t\t\tUsername Is Not Correct!");
+      printf("\n\n\n\t\t\t Do you want to re-login ?");
+      printf("\n\n\n\t\t\t Press [Y] for yes and [N] for no");
+      if (getch() == 'y' && getch() == 'Y')
       {
         system("cls");
-        reg();
+        login();
       }
-      else if (checkuser != 0 && checkpass == 0)
+      if (getch() == 'n' && getch() == 'N')
       {
-        goto h;
+        system("cls");
+        login_menu();
+      }
+    }
+    break;
+  }
+
+  printf("\n\n\n\t\t\tPassword: ");
+  scanf("%s", &w[i].password);
+  fgets(w[i].password, 50, fp);
+  while (!feof(fp))
+  {
+    fread(&w[i], sizeof(w[i]), 1, fp);
+    checkpass = strcmp(password, w[i].password);
+
+    if (checkpass == 0)
+    {
+      system("cls");
+      printf("\n\n\n\t\t\t Password Correct!");
+      break;
+    }
+    else
+    {
+      printf("\n\n\n\t\t\tWrong Password!");
+      printf("\n\n\n\t\t\t Press any key to re-login");
+      if (getch())
+      {
+        system("cls");
+        login();
       }
     }
     break;
   }
   getch();
 }
-// Main
+
 int main(void)
 {
   login_menu();
