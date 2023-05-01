@@ -43,6 +43,8 @@ run_helpme: # run HelpMe\main.cpp
 	./HelpMe\main.exe
 	del HelpMe\main.exe
 
-run_quiz:
+run_test:
 	cls
-	g++ $(APP_FILES) -o login\login.exe
+	g++ $(APP_FILES) -o output\login.exe
+	./ouput\login.exe
+	del output\login.exe
