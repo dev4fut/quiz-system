@@ -16,3 +16,5 @@ class Subject{
         void update_subject();
         void delete_subject();
 };
+
+#endif

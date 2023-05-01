@@ -1,54 +1,42 @@
 #include "..\functions\helpio.h"
 #include "..\functions\info.h"
 #include "user.h"
+#include "grade.h"
+#include "..\functions\helpio.h"
 #include <iostream>
 
 using namespace std;
 
 User::User()
 {
-    this->ID = 0;
-    this->username = "";
-    this->dateBirth = "";
-    this->grade = new Grade();
+    id = 0;
+    name = "";
+    username = "";
+    password = "";
+    dob = "";
+    grade = new Grade();
 }
 
-User::User(int ID, string Username, string DateBirth, int Class){
-    this->ID = ID;
-    this->username = Username;
-    this->dateBirth = DateBirth;
-    this->grade = Class;
+User::User(int id, string name, string username, string password, string dob, Grade *grade)
+{
+    this->id = id;
+    this->name = name;
+    this->username = username;
+    this->password = password;
+    this->dob = dob;
+    this->grade = grade;
 }
 
-void User::input_user(){
-    cout << "Enter ID: ";
-    cin >> ID;
-    cout << "Enter Username: ";
-    cin >> username;
-    cout << "Enter Date of Birth: ";
-    cin >> dateBirth;
-    cout << "Enter Class: ";
-    cin >> grade;
-}
-
-void User::output_user(){
-    cout << "ID: " << ID << endl;
-    cout << "Username: " << Username << endl;
-    cout << "Date of Birth: " << DateBirth << endl;
-    cout << "Class: " << Class << endl;
-}
-
-void User::update_user(){
-    cout << "Enter ID: ";
-    cin >> ID;
-    cout << "Enter Username: ";
-    cin >> Username;
-    cout << "Enter Date of Birth: ";
-    cin >> DateBirth;
-    cout << "Enter Class: ";
-    cin >> Class;
-}
-
-void User::delete_user(){
-    delete this;
+void User::input_user()
+{
+    cout << "Enter user's name: ";
+    getline(cin, name);
+    cout << "Enter user's username: ";
+    getline(cin, username);
+    cout << "Enter user's password: ";
+    getline(cin, password);
+    cout << "Enter user's date of birth: ";
+    dob = input_date();
+    cout << "Enter user's grade: " << endl;
+    grade->input_grade();
 }

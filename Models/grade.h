@@ -7,9 +7,9 @@ using namespace std;
 class Grade{
     public:
         int ID;
-        string Name;
-        string Teacher;
-        int Year;
+        string name;
+        string teacher;
+        int year;
 
         Grade();     
         Grade(int ID, string Name, string Teacher, int Year);

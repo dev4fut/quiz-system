@@ -7,13 +7,15 @@ using namespace std;
 
 class User{
     public:
-        int ID;
+        int id;
+        string name;
         string username;
-        string dateBirth;
-        Grade grade;
+        string password;
+        string dob;
+        Grade *grade;
             
         User();
-        User(int ID, string Username, string DateBirth, int Class);
+        User(int id, string name, string username, string password, string dob, Grade *grade);
         void input_user();
         void output_user();
         void update_user();
