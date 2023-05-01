@@ -1,42 +1,67 @@
-int login(void)
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct login
 {
-  FILE *fp, *fu;
-  fp = fopen("pass.txt", "r");
-  fu = fopen("users.txt", "r");
-  char c[50], username[25], password[25];
-	char buffer[256], buffer2[256];
-	int cmu, cmp;
+  char fname[100];
+  char lname[20];
+  char username[20];
+  char password[20];
+};
 
-  printf("Enter username: ");
-	scanf("%s", &username);
+void reg()
+{
+  FILE *log;
+  log = fopen("login12.txt", "w");
+  struct login l;
 
-	fread(buffer, strlen(c) + 50, 1, fu);
-	fseek(fu, SEEK_SET, 0);
+  printf("Enter First name: "); scanf("%s", l.fname);
 
-	cmu = strcmp(buffer, username);
-	if (cmu == 0)
-	{
-		printf("True\n");
-	}
-	else
-	{
-		printf("False\n");
-	}
+  printf("Enter Last name: "); scanf("%s", l.lname);
 
-  printf("Enter password: ");
-	scanf("%s", &password);
+  printf("Enter username: "); scanf("%s", l.username);
+  printf("Enter password: "); scanf("%s", l.password);
+  fwrite(&l, sizeof(l), 1, log);
 
-	fread(buffer2, strlen(c) + 50, 1, fp);
-  fseek(fp, SEEK_SET, 0);
-	
-	cmp = strcmp(buffer2, password);
-	if (cmp == 0)
-	{
-		printf("True\n");
-	}
-	else
-	{
-		printf("False\n");
-	}
+  fclose(log);
+
+  printf("\n\nyour Username is UserID\n");
+  printf("Now login with UserID and Password\n");
+  printf("\nPress any key to continue.......");
+  getch();
+  system("cls");
+  login();
+}
+
+void login()
+{
+  char username[200], password[20];
+  FILE *log;
+  log = fopen("login12.txt", "r");
+  struct login l;
+  
+  printf("UserID: ");
+  scanf("%s", &username);
+
+  printf("Password: ");
+  scanf("%s", &password);
+
+  while(fread(&l, sizeof(l), 1, log))
+    {
+      if(strcmp(username, l.username) == 0 && strcmp(password, l.password) == 0)
+      {
+          printf("Access Granted\n");
+      }
+      else
+      {
+          printf("Please Enter correct UserID and Password")
+      }
+    }
+}
+
+int main(void)
+{
   return 0;
 }
