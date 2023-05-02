@@ -14,7 +14,6 @@ class Question{
         int level;
             
         Question();
-        Question(int id, string question, string answer, int correct, int level);
         void input_question();
         void output_question();
         void update_question();

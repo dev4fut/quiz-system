@@ -21,3 +21,8 @@ run_testmain:
 	g++ $(FUNCTIONS_FILES) tests\HelpMe\test_helpinput.cpp -o tests\HelpMe\test_helpinput.exe
 	./tests\HelpMe\test_helpinput.exe
 	del tests\HelpMe\test_helpinput.exe
+run_question:
+	cls
+	g++ Models\question.cpp -o Models\question.exe
+	./quiz-system\Models\question.exe
+	del ./quiz-system\Models\question.exe

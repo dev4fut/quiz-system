@@ -15,9 +15,10 @@ User::User()
     password = "";
     dob = "";
     grade = new Grade();
+    gender = gender;
 }
 
-User::User(int id, string name, string username, string password, string dob, Grade *grade)
+User::User(int id, string name, string username, string password, string dob, Grade *grade, string gender)
 {
     this->id = id;
     this->name = name;
@@ -25,6 +26,7 @@ User::User(int id, string name, string username, string password, string dob, Gr
     this->password = password;
     this->dob = dob;
     this->grade = grade;
+    this->gender = gender;
 }
 
 void User::input_user()
@@ -37,6 +39,38 @@ void User::input_user()
     getline(cin, password);
     cout << "Enter user's date of birth: ";
     dob = input_date();
-    cout << "Enter user's grade: " << endl;
-    grade->input_grade();
+}
+
+void User::output_user()
+{
+    cout <<"User %d: " << endl;
+    cout <<"ID: "<< id << "\nUsername: " << username << "\nGender: " << gender << "\nDate of birth: " << "\nClass: " << grade << "\nPassword: " << password << endl;
+}
+
+void User::update_user()
+{
+    // null entered is skipped change
+    string temp;
+    cout <<"Username: " << endl;
+    cin >> temp;
+    if (temp != "")
+        username = temp;
+    cout <<"Password: " << endl;
+    cin >> password;
+    if (temp != "")
+        password = temp;
+    cout <<"Date of birth: " << endl;
+    temp = input_date();
+    if (temp != "")
+        dob = temp;
+    cout <<"Gender: " << endl;
+    cin >> gender;
+    if (temp != "")
+        gender = temp;
+}
+
+void User::delete_user()
+{
+    // delete object user
+    delete this;
 }

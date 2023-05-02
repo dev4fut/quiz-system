@@ -10,7 +10,8 @@ class Subject{
         string name;
         string description;
             
-        Subject(int ID, string Name, string Teacher, int Year);
+        Subject();
+        Subject(int id, string name, string description);
         void input_subject();
         void output_subject();
         void update_subject();

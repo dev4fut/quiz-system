@@ -1,73 +1,61 @@
-#include <stdio.h>
-#include <string.h>
+#include <iostream>
+#include <string>
+#include "question.h"
 
-void questions(char *temp)
+using namespace std;
+
+Question::Question()
 {
-    struct question
+    id = 0;
+    question = "";
+    for (int i = 0; i < 11; i++)
     {
-        char question[100];
-        char ans1[100];
-        char ans2[100];
-        char ans3[100];
-        char ans4[100];
-    } q;
-    // input question to struct
-    {
-        printf(" ");
-        scanf("%s", &q.question);
-        printf("\n");
-        scanf("%s", &q.ans1);
-        printf("\n");
-        scanf("%s", &q.ans2);
-        printf("\n");
-        scanf("%s", &q.ans3);
-        printf("\n");
-        scanf("%s", &q.ans4);
-    };
+        this->answer[i] = "";
+        this->correct[i] = 0;
+    }
+    level = 0;
+}
 
-    // output variable in struct
-    printf("\nQuestion %d: %s\n", q.question);
-    printf("A: %s\n", q.ans1);
-    printf("B: %s\n", q.ans2);
-    printf("C: %s\n", q.ans3);
-    printf("D: %s\n", q.ans4);
+void Question::input_question()
+{
+    int n;
+    cout << "Enter question: " << endl;
+    cin >> question;
+    cout << "How many Answers: " << endl;
+    cin >> n;
+    do 
+    {
+        cout << "How many Answer: " << endl;
+    } while (n > 1 && n < 11);
+    
+    for (int i = 0; i < n; i++)
+    {
+        cout << "Enter answer: " << endl;
+        cin >> answer[i];
+    }
+    
+}
 
-    // Update variables in struct
-    printf("\nQuestion: %s\n");
-    scanf("%s", &temp);
-    int cmp1 = strcmp(temp, " ");
-    if (cmp1 == 1)
+void Question::output_question()
+{
+    cout << "Question: " << question << endl;
+    cout << "Answer: " << answer << endl;
+}
+void Question::update_question()
+{
+    string temp;
+    cout << "Enter Question: " << endl;
+    cin >> temp;
+    if (temp != " ") question = temp;
+    for (int i = 0; i < 11; i++)
     {
-        strcpy(q.question, temp);
+        cout << "Answer: " << endl;
+        cin >> temp;
+        if (temp != " ") answer[i] = temp;
     }
-    printf("\nA: %s\n");
-    scanf("%s", &temp);
-    int cmp1 = strcmp(temp, " ");
-    if (cmp1 == 1)
-    {
-        strcpy(q.ans1, temp);
-    }
-    printf("\nB: %s\n");
-    scanf("%s", &temp);
-    int cmp1 = strcmp(temp, " ");
-    if (cmp1 == 1)
-    {
-        strcpy(q.ans2, temp);
-    }
-    printf("\nC: %s\n");
-    scanf("%s", &temp);
-    int cmp1 = strcmp(temp, " ");
-    if (cmp1 == 1)
-    {
-        strcpy(q.ans3, temp);
-    }
-    printf("\nD: %s\n");
-    scanf("%s", &temp);
-    int cmp1 = strcmp(temp, " ");
-    if (cmp1 == 1)
-    {
-        strcpy(q.ans4, temp);
-    }
+}
 
-    // Delete variables in struct
-};
+void Question::delete_question()
+{
+    delete this;
+}

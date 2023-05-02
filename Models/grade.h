@@ -18,3 +18,5 @@ class Grade{
         void update_class();
         void delete_class();
 };
+
+#endif
