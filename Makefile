@@ -27,3 +27,13 @@ run_testmain:
 	g++ $(FUNCTIONS_FILES) tests\HelpMe\test_helpinput.cpp -o tests\HelpMe\test_helpinput.exe
 	./tests\HelpMe\test_helpinput.exe
 	del tests\HelpMe\test_helpinput.exe
+run_hoho:
+	cls
+	g++ tests\constructor.cpp -o tests\constructor.exe
+	./tests\constructor.exe
+	del tests\constructor.exe
+run_grade:
+	cls
+	g++ models\grade.cpp tests\models_test\grade_test.cpp -o tests\models_test\grade_test.exe
+	./tests\models_test\grade_test.exe
+	del tests\models_test\grade_test.exe

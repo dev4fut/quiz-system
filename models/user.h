@@ -9,6 +9,7 @@ public:
     string DateBirth;
     int Class;
 
+    User();
     User(int ID, string Username, string DateBirth, int Class);
     void input_user();
 

@@ -9,6 +9,13 @@ class User{
         string DateBirth;
         int Class;
             
+        User(){
+            this->ID = 0;
+            this->Username = "";
+            this->DateBirth = "";
+            this->Class = 0;
+        }
+        
         User(int ID, string Username, string DateBirth, int Class){
             this->ID = ID;
             this->Username = Username;
