@@ -11,7 +11,7 @@ class Subject{
         string description;
         
         Subject();
-        Subject(int id, string name, string description);
+        void initSubject(int id, string name, string description);
         void input_subject();
         void output_subject();
         void update_subject();

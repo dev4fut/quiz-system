@@ -1,4 +1,4 @@
-#include "helpio.h"
+#include "..\functions\helpio.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -43,7 +43,7 @@ class User{
             scanf("%s", &temp);
             if (temp != "") Username = temp;
             printf("Date of birth: ");
-            input_date(temp);
+            temp = input_date();
             if (temp != "") DateBirth = temp;
             printf("Class: ");
             scanf("%s", &temp);

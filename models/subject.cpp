@@ -10,7 +10,7 @@ Subject::Subject()
     description = "";
 }
 
-Subject::Subject(int id, string name, string description)
+void Subject::initSubject(int id, string name, string description)
 {
     this->id = id;
     this->name = name;

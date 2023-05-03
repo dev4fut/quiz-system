@@ -1,4 +1,5 @@
 #include"info.h"
+#include "..\app\data.h"
 #include<iostream>
 
 using namespace std;
@@ -11,4 +12,15 @@ void welcome(){
             "Good luck!"
             << endl;
 
+}
+
+void menu_subject()
+{
+    int i = 0;
+    cout << "Choose a subject" << endl;
+    while (subjects[i].id == 0)
+    {
+        cout << i + 1 << ". " << subjects[i].name << endl;
+        i++;
+    }
 }

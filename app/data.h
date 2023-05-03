@@ -14,19 +14,12 @@ using namespace std;
  * List of users, grades, subjects, questions, etc.
  */
 
-class Data
-{
-private:
-    /* data */
-    User users[10];
-    Grade grades[10];
-    Subject subjects[10];
-    Question questions[1000];
+/* data */
+User users[10];
+Grade grades[10];
+Subject subjects[10];
+Question questions[1000];
 
-public:
-    Data();
-    ~Data();
-    void initListSubject();
-};
+void initListSubject();
 
 #endif

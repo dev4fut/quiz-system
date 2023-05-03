@@ -1,7 +1,8 @@
 # list file to compile
 APP_FILES = app\app.cpp
+DATA_FILES = app\data.cpp
 FUNCTIONS_FILES = functions\helpio.cpp functions\info.cpp
-MODELS_FILES = models\class.cpp models\subject.cpp models\question.cpp models\questionlist.cpp models\user.cpp models\userlist.cpp
+MODELS_FILES = models\class.cpp models\subject.cpp models\question.cpp models\user.cpp
 FILES = $(APP_FILES) $(FUNCTIONS_FILES)
 
 run: # run app\app.cpp
@@ -27,11 +28,11 @@ run_testmain:
 	g++ $(FUNCTIONS_FILES) tests\HelpMe\test_helpinput.cpp -o tests\HelpMe\test_helpinput.exe
 	./tests\HelpMe\test_helpinput.exe
 	del tests\HelpMe\test_helpinput.exe
-run_hoho:
+run_asd:
 	cls
-	g++ tests\constructor.cpp -o tests\constructor.exe
-	./tests\constructor.exe
-	del tests\constructor.exe
+	g++ $(DATA_FILES) $(MODELS_FILES) functions\info.cpp tests\asd.cpp -o tests\asd.exe
+	./tests\asd.exe
+	del tests\asd.exe
 run_grade:
 	cls
 	g++ models\grade.cpp tests\models_test\grade_test.cpp -o tests\models_test\grade_test.exe
