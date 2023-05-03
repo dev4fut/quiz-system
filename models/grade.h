@@ -1,22 +1,22 @@
 // header file for class class
-#ifndef CLASS_H
-#define CLASS_H
+#ifndef GRADE_H
+#define GRADE_H
 #include <string>
+
 using namespace std;
 
 class Grade{
     public:
-        int ID;
+        int id;
         string name;
         string teacher;
         int year;
 
         Grade();     
-        Grade(int ID, string Name, string Teacher, int Year);
-        void input_class();
-        void output_class();
-        void update_class();
-        void delete_class();
+        Grade(int id, string Name, string Teacher, int Year);
+        void input_grade();
+        void output_grade();
+        void update_grade();
+        void delete_grade();
 };
-
 #endif
