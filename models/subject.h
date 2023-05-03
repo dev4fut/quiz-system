@@ -1,7 +1,7 @@
 // header file for subject class
 #ifndef SUBJECT_H
 #define SUBJECT_H
-#include <string>
+
 using namespace std;
 
 class Subject{
@@ -9,9 +9,9 @@ class Subject{
         int id;
         string name;
         string description;
-            
+        
         Subject();
-        Subject(int id, string name, string description);
+        void initSubject(int id, string name, string description);
         void input_subject();
         void output_subject();
         void update_subject();
