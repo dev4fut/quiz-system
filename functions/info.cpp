@@ -1,6 +1,5 @@
 #include"info.h"
 #include "../models/user.h"
-#include "..\app\data.h"
 #include<iostream>
 
 using namespace std;
