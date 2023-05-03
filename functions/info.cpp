@@ -1,5 +1,8 @@
 #include"info.h"
-#include "../models/user.h"
+#include"../app/data.h"
+#include"../models/grade.h"
+#include"../models/subject.h"
+#include"../models/user.h"
 #include<iostream>
 
 using namespace std;
@@ -20,7 +23,7 @@ void dashboard(User *user)
     cout << "Date of Birth: " << user->dob << endl;
     cout << "Class: " << user->grade << endl;
     cout << "Gender: " << user->gender << endl;
-    cout << "*********** SCORE ***********"
+    cout << "*********** SCORE ***********";
 }
 
 void menu_subject()
