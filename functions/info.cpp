@@ -36,3 +36,30 @@ void menu_subject()
         i++;
     }
 }
+
+void management_user(User *user, int m)
+{
+    cout << "Dashboard Management Users"
+    "1. Users Information"
+    "2. Change Users Information"
+    "3. Remove Users Information"
+    "4. Exit"
+    << endl;
+    switch (m)
+    {
+    case 1:
+        void output_user(User);
+        break;
+    case 2:
+        void update_user(User);
+        break;
+    case 3:
+        void delete_user(User);
+        break;
+    case 4:
+        exit(0);
+        break;
+    default:
+        break;
+    }
+}
