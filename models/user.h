@@ -16,7 +16,7 @@ class User{
         string gender;
             
         User();
-        User(int id, string name, string username, string password, string dob, Grade *grade, string gender);
+        void initUser(int id, string name, string username, string password, string dob, Grade *grade, string gender);
         void input_user();
         void output_user();
         void update_user();

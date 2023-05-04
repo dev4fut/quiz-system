@@ -12,7 +12,7 @@ Grade::Grade()
     year = 0;
 }
 
-Grade::Grade(int id, string name, string teacher, int year)
+void Grade::initGrade(int id, string name, string teacher, int year)
 {
     this->id = id;
     this->name = name;

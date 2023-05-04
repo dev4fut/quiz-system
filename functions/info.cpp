@@ -30,9 +30,9 @@ void menu_subject()
 {
     int i = 0;
     cout << "Choose a subject" << endl;
-    while (subjects[i].id == 0)
+    while (subjects[i]->id == 0)
     {
-        cout << i + 1 << ". " << subjects[i].name << endl;
+        cout << i + 1 << ". " << subjects[i]->name << endl;
         i++;
     }
 }

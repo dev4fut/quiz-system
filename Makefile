@@ -1,8 +1,8 @@
 # list file to compile
 APP_FILES = app\app.cpp
 DATA_FILES = app\data.cpp
-FUNCTIONS_FILES = functions\helpio.cpp functions\info.cpp
-MODELS_FILES = models\class.cpp models\subject.cpp models\question.cpp models\user.cpp
+FUNCTIONS_FILES = functions\helpio.cpp functions\info.cpp functions\fileio.cpp
+MODELS_FILES = models\grade.cpp models\subject.cpp models\question.cpp models\user.cpp
 FILES = $(APP_FILES) $(FUNCTIONS_FILES)
 
 run: # run app\app.cpp
@@ -43,3 +43,9 @@ run_grade:
 	g++ models\grade.cpp tests\models_test\grade_test.cpp -o tests\models_test\grade_test.exe
 	./tests\models_test\grade_test.exe
 	del tests\models_test\grade_test.exe
+test_file:
+	del tests\functions_test\fileio_test.exe
+	cls
+	gdb $(DATA_FILES) $(MODELS_FILES) $(FUNCTIONS_FILES) tests\functions_test\fileio_test.cpp -o tests\functions_test\fileio_test.exe
+	./tests\functions_test\fileio_test.exe
+	del tests\functions_test\fileio_test.exe

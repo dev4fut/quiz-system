@@ -18,7 +18,7 @@ User::User()
     gender = gender;
 }
 
-User::User(int id, string name, string username, string password, string dob, Grade *grade, string gender)
+void User::initUser(int id, string name, string username, string password, string dob, Grade *grade, string gender)
 {
     this->id = id;
     this->name = name;

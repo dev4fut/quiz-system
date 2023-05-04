@@ -15,11 +15,21 @@ using namespace std;
  */
 
 /* data */
-User users[10];
-Grade grades[10];
-Subject subjects[10];
-Question questions[1000];
+inline User* users[10];
+inline Grade* grades[10];
+inline Subject* subjects[10];
+inline Question* questions[1000];
 
+/* functions */
+
+/* initial*/
+void initListUser();
 void initListSubject();
+void initListQuestion();
+
+/* show list*/
+void showListUser();
+void showListSubject();
+void showListQuestion();
 
 #endif
