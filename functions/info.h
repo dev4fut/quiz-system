@@ -7,5 +7,7 @@
 using namespace std;
 
 void welcome();
+void dashboard(User *user);
+void menu_subject();
 
 #endif
