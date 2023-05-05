@@ -1,10 +1,9 @@
 #ifndef DATA_H
 #define DATA_H
 
+#include <iostream>
 #include <string>
 #include "..\models\user.h"
-#include "..\models\grade.h"
-#include "..\models\subject.h"
 #include "..\models\question.h"
 
 using namespace std;
@@ -15,19 +14,21 @@ using namespace std;
  */
 
 /* data */
-User users[10];
-Grade grades[10];
-Subject subjects[10];
-Question questions[1000];
+static User users[10];
+static Grade grades[10];
+static Subject subjects[10];
+static Question questions[1000];
 
 /* functions */
 
 /* initial*/
+void initListGrade();
 void initListUser();
 void initListSubject();
 void initListQuestion();
 
 /* show list*/
+void showListGrade();
 void showListUser();
 void showListSubject();
 void showListQuestion();
