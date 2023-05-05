@@ -13,7 +13,7 @@ int main()
     // fileio.read_list_users();
     for (int i = 0; i < sizeof(users); i++)
     {
-        cout << users[i]->username << endl;
+        cout << users[i].username << endl;
     }
     return 0;
 }

@@ -15,10 +15,10 @@ using namespace std;
  */
 
 /* data */
-inline User* users[10];
-inline Grade* grades[10];
-inline Subject* subjects[10];
-inline Question* questions[1000];
+User users[10];
+Grade grades[10];
+Subject subjects[10];
+Question questions[1000];
 
 /* functions */
 

@@ -44,8 +44,14 @@ run_grade:
 	./tests\models_test\grade_test.exe
 	del tests\models_test\grade_test.exe
 test_file:
-	del tests\functions_test\fileio_test.exe
-	cls
-	gdb $(DATA_FILES) $(MODELS_FILES) $(FUNCTIONS_FILES) tests\functions_test\fileio_test.cpp -o tests\functions_test\fileio_test.exe
+	# del tests\functions_test\fileio_test.exe
+	clear
+	g++ $(DATA_FILES) $(MODELS_FILES) $(FUNCTIONS_FILES) tests\functions_test\fileio_test.cpp -o tests\functions_test\fileio_test.exe
 	./tests\functions_test\fileio_test.exe
 	del tests\functions_test\fileio_test.exe
+
+test_data:
+	clear
+	g++ app\data.cpp models\user.cpp tests\functions_test\fileio_test.cpp -o tests\functions_test\data_test.exe
+	./tests\functions_test\data_test.exe
+	del tests\functions_test\data_test.exe
