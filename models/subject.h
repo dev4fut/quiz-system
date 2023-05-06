@@ -12,10 +12,10 @@ class Subject{
         
         Subject();
         void initSubject(int id, string name, string description);
-        void input_subject();
-        void output_subject();
-        void update_subject();
-        void delete_subject();
+        void inputSubject();
+        void outputSubject();
+        void updateSubject();
+        void deleteSubject();
 };
 
 #endif

@@ -1,9 +1,9 @@
-#include "info.h"
-#include "../app/data.h"
-#include "../models/grade.h"
-#include "../models/subject.h"
-#include "../models/user.h"
-#include <iostream>
+#include"info.h"
+#include"../data/database.h"
+#include"../models/grade.h"
+#include"../models/subject.h"
+#include"../models/user.h"
+#include<iostream>
 
 using namespace std;
 
@@ -48,48 +48,10 @@ void dashboard(User *user)
     cout << "*********** SCORE ***********" << endl;
 }
 
-void menu_subject()
+void menu_Subject()
 {
     int i = 0;
     cout << "Choose a subject" << endl;
-    while (subjects[i].id == 0)
-    {
-        cout << i + 1 << ". " << subjects[i].name << endl;
-        i++;
-    }
-}
-
-void options_question(int n)
-{
-    cout << "------------------MENU OPTIONS QUESTION ------------------" 
-            "1. Create question"
-            "2. Show list of question"
-            "3. update question"
-            "4. delete question"
-            "5. Exit program"
-         << endl;
-    cin >> n;
-    switch (n)
-    {
-    case 1:
-        void input_question(); break;
-    case 2:
-        void output_question(); break;
-    case 3:
-        void update_question(); break;
-    case 4:
-        void delete_question(); break;
-    default:
-        system("exit"); break;
-    }
-}
-
-void start_quiz()
-{
-    cout << "Ready to Start quiz"
-            "You have 5 minutes to finish this quiz"
-            "Goodluck for you"
-            "Press any key to start quiz"
-         << endl;
-
+    // print all subject from database db.getListSubject()
+    
 }

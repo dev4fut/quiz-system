@@ -16,7 +16,7 @@ bool check_date(char day[], char month[], char year[])
     return true;
 }
 
-string input_date()
+string inputdate()
 {
     char day[3], month[3], year[5];
     cout << "Please input the date in dd/mm/yyyy format:";
@@ -35,6 +35,6 @@ string input_date()
     else
     {
         cout << "Invalid date. Please try again.";
-        return input_date();
+        return inputdate();
     }
 }

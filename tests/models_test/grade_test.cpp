@@ -6,6 +6,6 @@ using namespace std;
 int main(void)
 { 
     Grade a;
-    a.input_grade();
+    a.inputgrade();
     return 0;
 }

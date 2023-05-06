@@ -7,16 +7,25 @@ using namespace std;
 
 class FileIO{
     public:
-        string files_name[10];
+        string users_file_name;
         string files_path;
         string files_extension;
         
         FileIO();
-        FileIO(string file_name, string file_path, string file_extension, string file_full_path, string file_content);
-        void create_file();
-        void read_file();
-        void update_file();
-        void delete_file();
+
+        FILE *open_file(string file_name);
+        void close_file(FILE *file);
+
+        // write list entities to file
+        // write list users to file
+        void write_list_users();
+
+
+        // read list entities from file
+        // read list users from file and save to users in app/data.h
+        void read_list_users();
+
+        
 };
 
 
