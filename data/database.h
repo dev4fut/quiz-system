@@ -16,10 +16,10 @@ using namespace std;
 class Database
 {
     /* data */
-    static User users[10];
-    static Grade grades[10];
-    static Subject subjects[10];
-    static Question questions[1000];
+    User users[10];
+    Grade grades[10];
+    Subject subjects[10];
+    Question questions[1000];
 
     /* initial*/
     void initListGrade();
@@ -83,6 +83,6 @@ public:
     bool checkQuestion(Question question);
 };
 
-Database db;
+static Database db;
 
 #endif
