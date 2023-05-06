@@ -1,5 +1,5 @@
 #include"info.h"
-#include"../app/data.h"
+#include"../data/database.h"
 #include"../models/grade.h"
 #include"../models/subject.h"
 #include"../models/user.h"
@@ -26,13 +26,10 @@ void dashboard(User *user)
     cout << "*********** SCORE ***********";
 }
 
-void menu_subject()
+void menu_Subject()
 {
     int i = 0;
     cout << "Choose a subject" << endl;
-    while (subjects[i]->id == 0)
-    {
-        cout << i + 1 << ". " << subjects[i]->name << endl;
-        i++;
-    }
+    // print all subject from database db.getListSubject()
+    
 }

@@ -14,9 +14,9 @@ class Grade{
 
         Grade();     
         void initGrade(int id, string Name, string Teacher, int Year);
-        void input_grade();
-        void output_grade();
-        void update_grade();
-        void delete_grade();
+        void inputgrade();
+        void outputgrade();
+        void updategrade();
+        void deletegrade();
 };
 #endif

@@ -17,7 +17,7 @@ void Subject::initSubject(int id, string name, string description)
     this->description = description;
 }
 
-void Subject::input_subject()
+void Subject::inputSubject()
 {
     cout << "Enter subject's name: ";
     getline(cin, name);
@@ -25,21 +25,31 @@ void Subject::input_subject()
     getline(cin, description);
 }
 
-void Subject::output_subject()
+void Subject::outputSubject()
 {
     cout << "Subject's name: " << name << endl;
     cout << "Subject's description: " << description << endl;
 }
 
-void Subject::update_subject()
+void Subject::updateSubject()
 {
     string temp;
     cout << "Enter subject's name (Enter to skip): ";
     getline(cin, temp);
     if (temp != "")
+
+
+    
         name = temp;
     cout << "Enter subject's description (Enter to skip): ";
     getline(cin, temp);
     if (temp != "")
         description = temp;
+}
+
+void Subject::deleteSubject()
+{
+    id = 0;
+    name = "";
+    description = "";
 }

@@ -12,15 +12,20 @@ class Question{
         string question;
         string answer[10];
         int correct[10];
+        string explanation;
         int level;
         Subject *subject;
             
         Question();
-        void initQuestion(int id, string question, string answer[], int correct[], int level, Subject *subject);
-        void input_question();
-        void output_question();
-        void update_question();
-        void delete_question();
+        void initQuestion(int id, string question, string answer[], int correct[], string explanation, int level, Subject *subject);
+        void inputQuestion();
+        void outputQuestion();
+        bool checkAnswer(int answer);
+        bool inputAnswer();
+        void outputAnswer();
+        bool doQuestion();
+        void updateQuestion();
+        void deleteQuestion();
 };
 
 #endif

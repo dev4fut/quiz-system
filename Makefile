@@ -1,13 +1,12 @@
 # list file to compile
 APP_FILES = app\app.cpp
-DATA_FILES = app\data.cpp
+DATA_FILES = data/database.cpp
 FUNCTIONS_FILES = functions\helpio.cpp functions\info.cpp functions\fileio.cpp
-MODELS_FILES = models\grade.cpp models\subject.cpp models\question.cpp models\user.cpp
-FILES = $(APP_FILES) $(FUNCTIONS_FILES)
+MODELS_FILES = models\grade.cpp models\user.cpp models\subject.cpp models\question.cpp
 
 run: # run app\app.cpp
 	cls
-	g++ $(FILES) -o app\app.exe
+	g++ $(APP_FILES) $(FUNCTIONS_FILES) -o app\app.exe
 	./app\app.exe
 	del app\app.exe
 
@@ -16,3 +15,15 @@ test_data: # run app\data.cpp
 	g++ $(DATA_FILES) functions/helpio.cpp models/grade.cpp models/user.cpp tests/data_test.cpp -o tests/data_test.exe
 	./tests/data_test.exe
 	del tests/data_test.exe
+
+test_subject: # run tests/models_test/subject_test.cpp
+	cls
+	g++ models/subject.cpp tests/models_test/subject_test.cpp -o tests/models_test/subject_test.exe
+	./tests/models_test/subject_test.exe
+	del tests/models_test/subject_test.exe
+
+test_question: # run tests/models_test/question_test.cpp
+	cls
+	g++ models/question.cpp models/subject.cpp tests/models_test/question_test.cpp -o tests/models_test/question_test.exe
+	./tests/models_test/question_test.exe
+	del tests/models_test/question_test.exe
