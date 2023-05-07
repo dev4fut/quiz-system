@@ -13,10 +13,10 @@ class Grade{
         int year;
 
         Grade();     
-        void initGrade(int id, string Name, string Teacher, int Year);
-        void inputgrade();
-        void outputgrade();
-        void updategrade();
-        void deletegrade();
+        void init(int id, string Name, string Teacher, int Year);
+        void input();
+        void output();
+        void update();
+        void remove();
 };
 #endif

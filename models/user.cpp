@@ -18,7 +18,7 @@ User::User()
     gender = gender;
 }
 
-void User::initUser(int id, string name, string username, string password, string dob, Grade *grade, string gender)
+void User::init(int id, string name, string username, string password, string dob, Grade *grade, string gender)
 {
     this->id = id;
     this->name = name;
@@ -29,7 +29,7 @@ void User::initUser(int id, string name, string username, string password, strin
     this->gender = gender;
 }
 
-void User::inputuser()
+void User::input()
 {
     cout << "Enter user's name: ";
     getline(cin, name);
@@ -41,13 +41,13 @@ void User::inputuser()
     dob = inputdate();
 }
 
-void User::outputuser()
+void User::output()
 {
     cout <<"User %d: " << endl;
     cout <<"ID: "<< id << "\nUsername: " << username << "\nGender: " << gender << "\nDate of birth: " << "\nClass: " << grade << "\nPassword: " << password << endl;
 }
 
-void User::updateuser()
+void User::update()
 {
     // null entered is skipped change
     string temp;
@@ -69,7 +69,7 @@ void User::updateuser()
         gender = temp;
 }
 
-void User::deleteuser()
+void User::remove()
 {
     // delete object user
     delete this;

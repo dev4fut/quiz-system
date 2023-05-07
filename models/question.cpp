@@ -16,7 +16,7 @@ Question::Question()
     level = 0;
 }
 
-void Question::initQuestion(int id, string question, string answer[], int correct[], string explanation, int level, Subject *subject)
+void Question::init(int id, string question, string answer[], int correct[], string explanation, int level, Subject *subject)
 {
     this->id = id;
     this->question = question;
@@ -33,7 +33,7 @@ void Question::initQuestion(int id, string question, string answer[], int correc
     this->subject = subject;
 }
 
-void Question::inputQuestion()
+void Question::input()
 {
     int n;
     cout << "Enter question: " << endl;
@@ -74,7 +74,7 @@ void Question::inputQuestion()
     // db.selectSubject();
 }
 
-void Question::outputQuestion()
+void Question::output()
 {
     cout << "Question: " << question << endl;
     int i = 0;
@@ -85,7 +85,7 @@ void Question::outputQuestion()
     }
 }
 
-bool Question::checkAnswer(int answer)
+bool Question::checkAns(int answer)
 {
     int i = 0;
     while (this->correct[i] != -1)
@@ -96,7 +96,7 @@ bool Question::checkAnswer(int answer)
     return false;
 }
 
-bool Question::inputAnswer()
+bool Question::inputAns()
 {
     this->outputQuestion();
     cout << "Enter all correct answer (separated by semicolon): " << endl;
@@ -115,7 +115,7 @@ bool Question::inputAnswer()
     return true;
 }
 
-void Question::outputAnswer()
+void Question::outputAns()
 {
     int i = 0;
     while (this->correct[i] != -1)
@@ -126,7 +126,7 @@ void Question::outputAnswer()
     cout << this->explanation << endl;
 }
 
-bool Question::doQuestion()
+bool Question::doQuest()
 {
     this->outputQuestion();
     if(this->inputAnswer() == true)
@@ -139,7 +139,7 @@ bool Question::doQuestion()
         return false;
 }
 
-void Question::updateQuestion()
+void Question::update()
 {
     string temp;
     cout << "Enter Question: " << endl;
@@ -153,7 +153,7 @@ void Question::updateQuestion()
     }
 }
 
-void Question::deleteQuestion()
+void Question::remove()
 {
     delete this;
 }

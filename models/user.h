@@ -16,10 +16,10 @@ class User{
         string gender;
             
         User();
-        void initUser(int id, string name, string username, string password, string dob, Grade *grade, string gender);
-        void inputuser();
-        void outputuser();
-        void updateuser();
-        void deleteuser();
+        void init(int id, string name, string username, string password, string dob, Grade *grade, string gender);
+        void input();
+        void output();
+        void update();
+        void remove();
 };
 #endif

@@ -12,7 +12,7 @@ Grade::Grade()
     year = 0;
 }
 
-void Grade::initGrade(int id, string name, string teacher, int year)
+void Grade::init(int id, string name, string teacher, int year)
 {
     this->id = id;
     this->name = name;
@@ -20,7 +20,7 @@ void Grade::initGrade(int id, string name, string teacher, int year)
     this->year = year;
 }
 
-void Grade::inputgrade()
+void Grade::input()
 {
     cout << "Enter grade's ID: " << endl;
     cin >> id;
@@ -32,7 +32,7 @@ void Grade::inputgrade()
     cin >> year;
 }
 
-void Grade::outputgrade()
+void Grade::output()
 {
     cout << "Grade's ID: " << id << endl;
     cout << "Class Name: " << name << endl;
@@ -40,7 +40,7 @@ void Grade::outputgrade()
     cout << "Year: " << year << endl;
 }
 
-void Grade::updategrade()
+void Grade::update()
 {
     string temp;
     int temp2;
@@ -62,7 +62,7 @@ void Grade::updategrade()
     if (temp2 != 0) year = temp2;
 }
 
-void Grade::deletegrade()
+void Grade::remove()
 {
     delete this;
 }

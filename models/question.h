@@ -17,15 +17,15 @@ class Question{
         Subject *subject;
             
         Question();
-        void initQuestion(int id, string question, string answer[], int correct[], string explanation, int level, Subject *subject);
-        void inputQuestion();
-        void outputQuestion();
-        bool checkAnswer(int answer);
-        bool inputAnswer();
-        void outputAnswer();
-        bool doQuestion();
-        void updateQuestion();
-        void deleteQuestion();
+        void init(int id, string question, string answer[], int correct[], string explanation, int level, Subject *subject);
+        void input();
+        void output();
+        bool checkAns(int answer);
+        bool inputAns();
+        void outputAns();
+        bool doQuest();
+        void update();
+        void remove();
 };
 
 #endif

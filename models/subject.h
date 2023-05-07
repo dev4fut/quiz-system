@@ -11,11 +11,11 @@ class Subject{
         string description;
         
         Subject();
-        void initSubject(int id, string name, string description);
-        void inputSubject();
-        void outputSubject();
-        void updateSubject();
-        void deleteSubject();
+        void init(int id, string name, string description);
+        void input();
+        void output();
+        void update();
+        void remove();
 };
 
 #endif
