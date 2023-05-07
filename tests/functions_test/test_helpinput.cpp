@@ -6,7 +6,7 @@ using namespace std;
 
 int main(){
     string date;
-    date = input_date();
+    date = inputdate();
     cout << date;
     return 0;
 }

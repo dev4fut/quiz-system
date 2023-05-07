@@ -5,6 +5,6 @@
 
 using namespace std;
 
-string input_date();
+string inputdate();
 
 #endif
