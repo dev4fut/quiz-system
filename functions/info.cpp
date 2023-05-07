@@ -37,9 +37,10 @@ void menu_subject()
     }
 }
 
-void management_user(User *user, int m)
+void dashboard_user(User *user, int m)
 {
-    cout << "Dashboard Management Users"
+    cout <<
+    "Dashboard Management Users"
     "1. Users Information"
     "2. Change Users Information"
     "3. Remove Users Information"
@@ -48,7 +49,7 @@ void management_user(User *user, int m)
     switch (m)
     {
     case 1:
-        void output_user(User);
+        user->output_user();
         break;
     case 2:
         void update_user(User);

@@ -33,13 +33,8 @@ run_question:
 	g++ Models\question.cpp -o Models\question.exe
 	./quiz-system\Models\question.exe
 	del ./quiz-system\Models\question.exe
-run_asd:
+run_test:
 	cls
-	g++ $(DATA_FILES) $(MODELS_FILES) functions\info.cpp tests\asd.cpp -o tests\asd.exe
-	./tests\asd.exe
-	del tests\asd.exe
-run_grade:
-	cls
-	g++ models\grade.cpp tests\models_test\grade_test.cpp -o tests\models_test\grade_test.exe
-	./tests\models_test\grade_test.exe
-	del tests\models_test\grade_test.exe
+	g++ functions\info.cpp -o functions\info.exe
+	./functions\info.exe
+	del functions\info.exe
