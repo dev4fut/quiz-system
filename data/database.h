@@ -21,13 +21,10 @@ class Database
     Subject subjects[10];
     Question questions[1000];
 
-    /* initial*/
-    void initListGrade();
-    void initListUser();
-    void initListSubject();
-    void initListQuestion();
-
 public:
+
+    /* constructor */
+    Database();
 
     /* show list*/
     void showListGrade();

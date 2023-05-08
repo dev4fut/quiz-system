@@ -25,6 +25,7 @@ string inputdate()
     cin.get(month, 3, '/');
     cin.ignore(100, '/');
     cin.get(year, 5);
+    cin.ignore(100, '\n');
     if (check_date(day, month, year))
     {
         // join the strings and return

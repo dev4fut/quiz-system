@@ -22,14 +22,16 @@ void Grade::init(int id, string name, string teacher, int year)
 
 void Grade::input()
 {
-    cout << "Enter grade's ID: " << endl;
+    cout << "Enter grade's ID: ";
     cin >> id;
-    cout << "Enter class name: " << endl;
+    cin.ignore();
+    cout << "Enter class name: ";
     getline(cin, name);
-    cout << "Enter teacher name: " << endl;
+    cout << "Enter teacher name: ";
     getline(cin, teacher);
-    cout << "Enter year of grade: " << endl;
+    cout << "Enter year of grade: ";
     cin >> year;
+    cin.ignore();
 }
 
 void Grade::output()
@@ -42,27 +44,29 @@ void Grade::output()
 
 void Grade::update()
 {
+    cout << ">>> Update Grade's Information <<<"
+            "\n(Enter nothing or 0 to skip change)\n" << endl;
     string temp;
     int temp2;
-    cout << "Enter New Grade's ID: " << endl;
-    cin >> temp2;
-    if (temp2 != 0) id = temp2;
-
-    cout << "Enter New Class Name: " << endl;
+    cout << "Class Name ("<< name <<"): " << endl;
     getline(cin, temp);
     if (temp != "")
         name = temp;
 
-    cout << "Enter New Teacher's Name: " << endl;
+    cout << "Enter New Teacher's Name ("<< teacher <<"): " << endl;
     getline(cin, temp);
     if (temp != "")
         teacher = temp;
 
-    cout << "Enter New Year: " << endl;
+    cout << "Enter New Year("<< year <<"): " << endl;
+    cin >> temp2;
     if (temp2 != 0) year = temp2;
 }
 
 void Grade::remove()
 {
-    delete this;
+    id = 0;
+    name = "";
+    teacher = "";
+    year = 0;
 }

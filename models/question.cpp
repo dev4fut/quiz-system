@@ -98,7 +98,7 @@ bool Question::checkAns(int answer)
 
 bool Question::inputAns()
 {
-    this->outputQuestion();
+    this->output();
     cout << "Enter all correct answer (separated by semicolon): " << endl;
     string allAnswer = "";
     getline(cin, allAnswer);
@@ -128,7 +128,7 @@ void Question::outputAns()
 
 bool Question::doQuest()
 {
-    this->outputQuestion();
+    this->output();
     if(this->inputAnswer() == true)
     {
         cout << "Correct!" << endl;

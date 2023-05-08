@@ -15,7 +15,7 @@ User::User()
     password = "";
     dob = "";
     grade = new Grade();
-    gender = gender;
+    gender = "";
 }
 
 void User::init(int id, string name, string username, string password, string dob, Grade *grade, string gender)
@@ -31,31 +31,37 @@ void User::init(int id, string name, string username, string password, string do
 
 void User::input()
 {
-    cout << "Enter user's name: ";
+    cout << "Enter fullname: ";
     getline(cin, name);
-    cout << "Enter user's username: ";
+    cout << "Enter username: ";
     getline(cin, username);
-    cout << "Enter user's password: ";
+    cout << "Enter password: ";
     getline(cin, password);
-    cout << "Enter user's date of birth: ";
+    cout << "Enter date of birth: ";
     dob = inputdate();
+    cout << "Enter grade: ";
+    grade->input();
+    cout << "Enter gender (Male,Female,...): ";
+    getline(cin, gender);
 }
 
 void User::output()
 {
     cout <<"User %d: " << endl;
-    cout <<"ID: "<< id << "\nUsername: " << username << "\nGender: " << gender << "\nDate of birth: " << "\nClass: " << grade << "\nPassword: " << password << endl;
+    cout <<"ID: "<< id <<" - " << name << " (" << gender << ")"
+         << "\nUsername: " << username << " (******)\nDate of birth: " << dob
+         << "\nClass: " << grade->name << endl;
 }
 
 void User::update()
 {
     // null entered is skipped change
     string temp;
-    cout <<"Username: " << endl;
+    cout <<"Username ("<< username <<"): ";
     cin >> temp;
     if (temp != "")
         username = temp;
-    cout <<"Password: " << endl;
+    cout <<"Password: ";
     cin >> password;
     if (temp != "")
         password = temp;
@@ -63,14 +69,19 @@ void User::update()
     temp = inputdate();
     if (temp != "")
         dob = temp;
-    cout <<"Gender: " << endl;
+    cout <<"Class: " << endl;
+    grade->update();
+    cout <<"Gender: ";
     cin >> gender;
-    if (temp != "")
-        gender = temp;
 }
 
 void User::remove()
 {
-    // delete object user
-    delete this;
+    id = 0;
+    name = "";
+    username = "";
+    password = "";
+    dob = "";
+    grade = new Grade();
+    gender = "";
 }

@@ -8,5 +8,8 @@ int main(){
     string date;
     date = inputdate();
     cout << date;
+    string temp;
+    temp = date;
+    cout << temp;
     return 0;
 }

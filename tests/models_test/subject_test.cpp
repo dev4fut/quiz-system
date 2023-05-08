@@ -5,11 +5,11 @@ using namespace std;
 
 int main(){
     Subject subject;
-    subject.initSubject(1, "Math", "Mathematics");
-    subject.outputSubject();
-    subject.updateSubject();
-    subject.outputSubject();
-    subject.deleteSubject();
-    subject.outputSubject();
+    subject.init(1, "Math", "Mathematics");
+    subject.output();
+    subject.update();
+    subject.output();
+    subject.remove();
+    subject.output();
     return 0;
 }
