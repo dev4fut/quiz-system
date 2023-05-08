@@ -3,7 +3,7 @@ APP_FILES = app\app.cpp
 DATA_FILES = data/database.cpp
 FUNCTIONS_FILES = functions\helpio.cpp functions\info.cpp functions\fileio.cpp
 MODELS_FILES = models\grade.cpp models\user.cpp models\subject.cpp models\question.cpp
-CLS = clear
+CLS = cls
 
 run: # run app\app.cpp
 	$(CLS)
@@ -42,3 +42,9 @@ subject_test: # run tests/models_test/subject_test.cpp
 	g++ models/subject.cpp tests/models_test/subject_test.cpp -o tests/models_test/subject_test.exe
 	./tests/models_test/subject_test.exe
 	del tests/models_test/subject_test.exe
+
+question_test: # run tests/models_test/question_test.cpp
+	$(CLS)
+	g++ models/question.cpp models/subject.cpp tests/models_test/question_test.cpp -o tests/models_test/question_test.exe
+	./tests/models_test/question_test.exe
+	del tests/models_test/question_test.exe

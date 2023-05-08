@@ -108,7 +108,7 @@ bool Question::inputAns()
         if (allAnswer[i] != ';')
         {
             int answer = allAnswer[i] - '1';
-            if (this->checkAnswer(answer) == false) return false;
+            if (this->checkAns(answer) == false) return false;
         }
         i++;
     }
@@ -129,13 +129,13 @@ void Question::outputAns()
 bool Question::doQuest()
 {
     this->output();
-    if(this->inputAnswer() == true)
+    if(this->inputAns() == true)
     {
         cout << "Correct!" << endl;
         return true;
     }
         cout << "Wrong!" << endl;
-        this->outputAnswer();
+        this->outputAns();
         return false;
 }
 
