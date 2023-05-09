@@ -8,25 +8,26 @@ Question::Question()
 {
     id = 0;
     question = "";
-    for (int i = 0; i < 11; i++)
+    for (int i = 0; i < 10; i++)
     {
-        this->answer[i] = "";
-        this->correct[i] = -1;
+        this->answers[i] = "";
+        this->corrects[i] = -1;
     }
     level = 0;
 }
 
-void Question::init(int id, string question, string answer[], int correct[], string explanation, int level, Subject *subject)
+void Question::init(int id, string question, string* answers, int numAns, int* corrects, int numCor, string explanation, int level, Subject *subject)
 {
     this->id = id;
     this->question = question;
-    for (int i = 0; i < sizeof(answer) / sizeof(answer[0]); i++)
+    for (int i = 0; i < numAns; i++)
     {
-        this->answer[i] = answer[i];
+        this->answers[i] = answers[i];
     }
-    for (int i = 0; i < sizeof(correct) / sizeof(correct[0]); i++)
+
+    for (int i = 0; i < numCor; i++)
     {
-        this->correct[i] = correct[i];
+        this->corrects[i] = corrects[i];
     }
     this->explanation = explanation;
     this->level = level;
@@ -47,7 +48,7 @@ void Question::input()
     for (int i = 0; i < n; i++)
     {
         cout << "Enter answer" << i+1 << ": " << endl;
-        cin >> answer[i];
+        cin >> answers[i];
     }
     
     cout << "Enter correct answer (separated by semicolon): " << endl;
@@ -59,7 +60,7 @@ void Question::input()
         if (allAnswer[i] != ';')
         {
             int answer = allAnswer[i] - '1';
-            correct[i] = answer;
+            corrects[i] = answer;
         }
         i++;
     }
@@ -78,9 +79,9 @@ void Question::output()
 {
     cout << "Question: " << question << endl;
     int i = 0;
-    while (answer[i] != "")
+    while (answers[i] != "")
     {
-        cout << i+1 << ": " << answer[i] << endl;
+        cout << i+1 << ": " << answers[i] << endl;
         i++;
     }
 }
@@ -88,9 +89,9 @@ void Question::output()
 bool Question::checkAns(int answer)
 {
     int i = 0;
-    while (this->correct[i] != -1)
+    while (this->corrects[i] != -1)
     {
-        if (this->correct[i] == answer) return true;
+        if (this->corrects[i] == answer) return true;
         i++;
     }
     return false;
@@ -98,7 +99,6 @@ bool Question::checkAns(int answer)
 
 bool Question::inputAns()
 {
-    this->output();
     cout << "Enter all correct answer (separated by semicolon): " << endl;
     string allAnswer = "";
     getline(cin, allAnswer);
@@ -118,12 +118,12 @@ bool Question::inputAns()
 void Question::outputAns()
 {
     int i = 0;
-    while (this->correct[i] != -1)
+    while (this->corrects[i] != -1)
     {
-        cout << i+1 << ": " << this->answer[this->correct[i]] << endl;
+        cout << ">>>The correct answers is:\n" << i+1 << ": " << this->answers[this->corrects[i]] << endl;
         i++;
     }
-    cout << this->explanation << endl;
+    cout << "<<<Exp: " << this->explanation << endl;
 }
 
 bool Question::doQuest()
@@ -149,8 +149,9 @@ void Question::update()
     {
         cout << "Answer: " << endl;
         cin >> temp;
-        if (temp != " ") answer[i] = temp;
+        if (temp != " ") answers[i] = temp;
     }
+    
 }
 
 void Question::remove()

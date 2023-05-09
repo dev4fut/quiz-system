@@ -3,7 +3,7 @@ APP_FILES = app\app.cpp
 DATA_FILES = data/database.cpp
 FUNCTIONS_FILES = functions\helpio.cpp functions\info.cpp functions\fileio.cpp
 MODELS_FILES = models\grade.cpp models\user.cpp models\subject.cpp models\question.cpp
-CLS = cls
+CLS = clear
 
 run: # run app\app.cpp
 	$(CLS)
@@ -11,9 +11,9 @@ run: # run app\app.cpp
 	./app\app.exe
 	del app\app.exe
 
-test_data: # run app\data.cpp
+data_test: # run app\data.cpp
 	$(CLS)
-	g++ $(DATA_FILES) functions/helpio.cpp models/grade.cpp models/user.cpp tests/data_test.cpp -o tests/data_test.exe
+	g++ $(DATA_FILES) $(MODELS_FILES) functions/helpio.cpp tests/data_test.cpp -o tests/data_test.exe
 	./tests/data_test.exe
 	del tests/data_test.exe
 
@@ -23,6 +23,12 @@ helpio_test: # run tests/functions_test/helpio_test.cpp
 	g++ functions/helpio.cpp tests/functions_test/helpio_test.cpp -o tests/functions_test/helpio_test.exe
 	./tests/functions_test/helpio_test.exe
 	del tests/functions_test/helpio_test.exe
+
+fileio_test: # run tests/functions_test/fileio_test.cpp
+	$(CLS)
+	g++ $(DATA_FILES) $(MODELS_FILES) $(FUNCTIONS_FILES) tests/functions_test/fileio_test.cpp -o tests/functions_test/fileio_test.exe
+	./tests/functions_test/fileio_test.exe
+	del tests/functions_test/fileio_test.exe
 
 # test_models: # \models\*.cpp
 grade_test: # run tests/models_test/grade_test.cpp

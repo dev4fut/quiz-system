@@ -46,13 +46,13 @@ void dashboard_user(User *user, int m)
     switch (m)
     {
     case 1:
-        user->output_user();
+        user->output();
         break;
     case 2:
-        void update_user(User);
+        user->update();
         break;
     case 3:
-        void delete_user(User);
+        user->remove();
         break;
     case 4:
         exit(0);

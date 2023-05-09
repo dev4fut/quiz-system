@@ -62,16 +62,16 @@ public:
     void addQuestion(Question question);
 
     /* update entity*/
-    void updateUser(User user);
-    void updateGrade(Grade grade);
-    void updateSubject(Subject subject);
-    void updateQuestion(Question question);
+    void updateUser(int id);
+    void updateGrade(int id);
+    void updateSubject(int id);
+    void updateQuestion(int id);
 
     /* delete entity*/
-    void deleteUser(User user);
-    void deleteGrade(Grade grade);
-    void deleteSubject(Subject subject);
-    void deleteQuestion(Question question);
+    void deleteUser(int id);
+    void deleteGrade(int id);
+    void deleteSubject(int id);
+    void deleteQuestion(int id);
 
     /* check entity*/
     bool checkUser(User user);
