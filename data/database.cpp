@@ -129,6 +129,47 @@ Question* Database::getListQuestion()
     return questions;
 }
 
+// Get list entity size
+int Database::getListUserSize()
+{
+    int count = 0;
+    for (int i = 0; i < 10; i++)
+    {
+        if (users[i].id != 0) count++;
+    }
+    return count;
+}
+
+int Database::getListGradeSize()
+{
+    int count = 0;
+    for (int i = 0; i < 10; i++)
+    {
+        if (grades[i].id != 0) count++;
+    }
+    return count;
+}
+
+int Database::getListSubjectSize()
+{
+    int count = 0;
+    for (int i = 0; i < 10; i++)
+    {
+        if (subjects[i].id != 0) count++;
+    }
+    return count;
+}
+
+int Database::getListQuestionSize()
+{
+    int count = 0;
+    for (int i = 0; i < 1000; i++)
+    {
+        if (questions[i].id != 0) count++;
+    }
+    return count;
+}
+
 // Add new entity
 void Database::addUser(User user)
 {
@@ -269,8 +310,59 @@ void Database::updateQuestion(int id)
 }
 
 // Delete entity
+void Database::deleteGrade(int id)
+{
+    Grade* grade = getGradeById(id);
+    grade->remove();
+}
+
 void Database::deleteUser(int id)
 {
     User* user = getUserById(id);
-    
+    user->remove();
+}
+
+void Database::deleteSubject(int id)
+{
+    Subject* subject = getSubjectById(id);
+    subject->remove();
+}
+
+void Database::deleteQuestion(int id)
+{
+    Question* question = getQuestionById(id);
+    question->remove();
+}
+
+// Clear data
+void Database::cleanGrade()
+{
+    for (int i = 0; i < 10; i++)
+    {
+        grades[i].remove();
+    }
+}
+
+void Database::cleanUser()
+{
+    for (int i = 0; i < 10; i++)
+    {
+        users[i].remove();
+    }
+}
+
+void Database::cleanSubject()
+{
+    for (int i = 0; i < 10; i++)
+    {
+        subjects[i].remove();
+    }
+}
+
+void Database::cleanQuestion()
+{
+    for (int i = 0; i < 1000; i++)
+    {
+        questions[i].remove();
+    }
 }

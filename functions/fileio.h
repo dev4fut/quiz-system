@@ -2,6 +2,7 @@
 #define FILEIO_H
 
 #include <string>
+#include "../data/database.h"
 
 using namespace std;
 
@@ -19,17 +20,11 @@ class FileIO{
         FILE *openFile(string file_name);
         void closeFile(FILE *file);
 
-        // write entity list from database to file
-        void writeGradeFile();
-        void writeUserFile();
-        void writeSubjectFile();
-        void writeQuestionFile();
+        // write all entities from database to binary file
+        void writeAll();
 
-        // read entity list from file to database
-        void readGradeFile();
-        void readUserFile();
-        void readSubjectFile();
-        void readQuestionFile();
+        // read all entities from binary file to database
+        void readAll();
         
 };
 

@@ -7,6 +7,7 @@ using namespace std;
 int main()
 {
     FileIO fileio;
-    fileio.writeGradeFile();
-    
+    fileio.writeAll();
+    fileio.readAll();
+    return 0;
 }

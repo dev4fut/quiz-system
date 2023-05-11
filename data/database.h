@@ -73,6 +73,12 @@ public:
     void deleteSubject(int id);
     void deleteQuestion(int id);
 
+    /* clean database*/
+    void cleanUser();
+    void cleanGrade();
+    void cleanSubject();
+    void cleanQuestion();
+
     /* check entity*/
     bool checkUser(User user);
     bool checkGrade(Grade grade);
